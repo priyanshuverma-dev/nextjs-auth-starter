@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a Next.js Auth Starter Project with prisma and next-auth.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository
+2. Install the dependencies
+3. Create a `.env` file in the root of the project and copy the contents of the `.env.example` file into it. Replace the values with your own. The `DATABASE_URL` should be a connection string to your Mongodb database. The `AUTH_SECRET` should be a random string. The `AUTH_GITHUB_ID` and `AUTH_GITHUB_SECRET` should be the client id and client secret of your Github OAuth app. The `NEXTAUTH_URL` should be the URL of your application.
+
+For example, if you are running the application locally, the value should be `http://localhost:3000`. The `.env` file should look like this
+
+```
+DATABASE_URL="mnogodb://localhost:27017/your-database-name"
+AUTH_SECRET=""
+
+AUTH_GITHUB_ID=""
+AUTH_GITHUB_SECRET=""
+```
+
+4. Run the following commands to create the database and run the migrations:
+
+```
+npx prisma db push
+```
+
+5. Run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
